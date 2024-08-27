@@ -1,6 +1,4 @@
-package guia2_ThreadyRunnable.ej2;
-
-import javax.swing.table.TableRowSorter;
+package guia2_ThreadyRunnable.ej6;
 
 public class TesteoCorredor {
     public static void main(String[] args) {

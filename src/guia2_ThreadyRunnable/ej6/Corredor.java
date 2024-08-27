@@ -1,4 +1,4 @@
-package guia2_ThreadyRunnable.ej2;
+package guia2_ThreadyRunnable.ej6;
 
 public class Corredor implements Runnable{
     private String nombre = "";
