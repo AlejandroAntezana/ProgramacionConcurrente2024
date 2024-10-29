@@ -15,7 +15,7 @@ public class Programador implements Runnable {
         administrador.empezarProgramacion(id);
         try {
             System.out.println("Programador " + id + " programando");
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

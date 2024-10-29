@@ -30,22 +30,22 @@ public class Administrador {
     public void empezarProgramacion(int id) {
         mutex.lock();
         try {
-            while (computadorasOcupadas == totalComputadoras || librosOcupados == totalLibros) {
+            /*while (computadorasOcupadas == totalComputadoras || librosOcupados == totalLibros) {
                 System.out.println("Programador " + id + " esperando por recursos");
                 hayComputadoras.await();
                 hayLibros.await();
-            }
+            }*/
             while (computadorasOcupadas == totalComputadoras) {
                 System.out.println("Programador " + id + " esperando por computadoras");
                 hayComputadoras.await();
             }
+            computadorasOcupadas++;
             while (librosOcupados == totalLibros) {
                 System.out.println("Programador " + id + " esperando por libros");
                 hayLibros.await();
             }
-            computadorasOcupadas++;
             librosOcupados++;
-            System.out.println("Programador " + id + " empezando a programar");
+            //System.out.println("Programador " + id + " empezando a programar");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }finally{
@@ -58,7 +58,7 @@ public class Administrador {
         try {
             computadorasOcupadas--;
             librosOcupados--;
-            System.out.println("Programador " + id + " terminando de programar");
+            //System.out.println("Programador " + id + " terminando de programar");
             hayComputadoras.signal();
             hayLibros.signal();
         } finally {
